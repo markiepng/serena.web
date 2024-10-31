@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Serena's Web</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Serena</a>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+        </nav>
+    </header>
+    
+    <section class="home zoom">
+        <div class="home-img">
+            <img src="main.jpg" alt="">
+            <img src="homenih.png" alt="Gambar Tambahan">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's <span>Serena</span></h1>
+            <h3 class="typing-text">I'm a Student <span></span></h3>
+            <p>Sistem Informasi Universitas Pembangunan Jaya</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/srn_mlp"><i class="fa-brands fa-instagram"></i></a> 
+                <a href="https://www.linkedin.com/in/Serena Mariana Lalang Puling"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/markiepng"><i class="fa-brands fa-github"></i></a>
+                <a href="https://twitter.com/tanggdol"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about zoom" id="about">
+        <h1 class="typing-text">About me <span></span></h1>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Halo! 🌟 Saya Serena Mariana Lalang Puling (2024081021) mahasiswa semester 1 di Program Studi Sistem Informasi Universitas Pembangunan Jaya. 🎓 Saya memiliki hobi mendengarkan musik 🎶 yang tidak hanya membantu saya bersantai, tetapi juga memicu kreativitas dan inspirasi. ✨ Saya sangat antusias untuk mengeksplorasi lebih dalam tentang sistem informasi 💻 dan berharap bisa memberikan kontribusi yang berarti di bidang ini di masa depan. Terima kasih telah mengunjungi halaman saya! 😊</p>
+            </div>
+            <div class="about-img">
+                <img src="aboutnih.png" alt="About Me">
+            </div>
+        </div>
+    </section>
+    
+    
+    <section class="experience zoom" id="experience">
+        <h1 class="typing-text">Experience <span></span></h1>
+        <div class="experience-content">
+            <div class="experience-item">
+                <h2>Concordia's Sub Event : Vice Chair</h2>
+                <p><strong>September 2024 - Present</strong></p>
+                <p>In my position as Vice Chair at Concordia, I assist in leadership and organizational responsibilities, collaborating with team members to ensure effective project execution and community involvement.</p>
+            </div>
+            <div class="experience-item">
+                <h2>Student Ambassador : Events</h2>
+                <p><strong>September 2024 - Present</strong></p>
+                <p>As a Student Ambassador, I represent my institution at various events, fostering community engagement and promoting our campus to prospective students and stakeholders.</p>
+            </div>
+            <div class="experience-item">
+                <h2>Dakauri : Human Resource Development</h2>
+                <p><strong>September 2024 - Present</strong></p>
+                <p>In my role at Dakauri, I focus on enhancing human resource capabilities, contributing to the growth and development of team members through targeted initiatives.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Serena. All rights reserved.</p>
+        <div class="social-icons-footer">
+            <a href="https://www.instagram.com/srn_mlp"><i class="fa-brands fa-instagram"></i></a> 
+            <a href="https://www.linkedin.com/in/Serena Mariana Lalang Puling"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/markiepng"><i class="fa-brands fa-github"></i></a>
+            <a href="https://twitter.com/tanggdol"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        const navLinks = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('section');
+
+        let currentSectionIndex = 0;
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+
+            sections.forEach((section, index) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute('id');
+                    currentSectionIndex = index; // Update current section index
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+
+            sections.forEach((section, index) => {
+                if (current === section.getAttribute('id')) {
+                    section.classList.remove('zoom-out');
+                    section.classList.add('zoom-in');
+                } else {
+                    section.classList.remove('zoom-in');
+                    section.classList.add('zoom-out');
+                }
+            });
+        });
+
+        // Show footer with animation
+        window.onload = function() {
+            const footer = document.querySelector('footer');
+            footer.classList.add('visible');
+        };
+    </script>
+    
+</body>
+</html>

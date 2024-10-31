@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+header {
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: linear-gradient(135deg, #000000, #b74b4b);
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #b74b4b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav a {
+    font-size: 1.6rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    padding: 0.5rem; 
+    transition: color 0.3s ease; 
+}
+
+nav a:hover,
+nav a.active {
+    color: #350000;
+    font-weight: bold; 
+}
+
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+    transition: opacity 0.5s;
+}
+
+.zoom-in {
+    animation: zoomIn 0.5s forwards;
+}
+
+.zoom-out {
+    animation: zoomOut 0.5s forwards;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8); 
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0.8); 
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: black;
+}
+
+.home .home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: 80px;
+    margin-right: 120px;
+}
+
+.home-content h1:hover,
+.home-content h3:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+span {
+    color: #b74b4b;
+}
+
+.home-content h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+}
+
+.home-img {
+    border-radius: 50%;
+}
+
+.home-img img {
+    position: relative;
+    width: 33vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px solid #b74b4b;
+    cursor: pointer;
+    transition: 0.2s linear;
+    margin-top: -40px;
+}
+
+.home-img img:hover {
+    transform: scale(1.05);
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #b74b4b;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #b74b4b;
+}
+
+.social-icons a:hover {
+    color: black;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #b74b4b;
+    box-shadow: 0 0 25px #b74b4b;
+}
+
+.about {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 25rem; 
+}
+
+.about h1 {
+    font-size: 4rem;
+    color: #b74b4b;
+    margin: 3rem 0 2rem;
+    margin-bottom: -150px; 
+    margin-left: -180px;
+    cursor: pointer;
+}
+
+.about h1:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row; /* Mengubah ke row untuk gambar di sebelah kanan */
+    align-items: center;
+    margin-top: -2rem;
+    justify-content: space-between; /* Menambahkan space antara teks dan gambar */
+}
+
+.about-img {
+    display: flex;
+    justify-content: center;
+    margin-left: 2rem; /* Menambahkan jarak antara teks dan gambar */
+    margin-top: 1rem;
+}
+
+.about-img img {
+    width: 15vw;
+    max-width: 300px;
+    border-radius: 10%;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+
+.about-img img:hover {
+    transform: scale(1.05);
+}
+
+.about-text {
+    text-align: center;
+}
+
+.about-text p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    margin-top: 1.5rem;
+    margin-left: 30px;
+}
+
+.experience {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 15rem; 
+}
+
+.experience h1 {
+    font-size: 4rem;
+    color: #b74b4b;
+    margin: 3rem 0 2rem; 
+    cursor: pointer;
+}
+
+.experience h1:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.experience-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.experience-item {
+    background-color: #161616;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 80%;
+    box-shadow: 0 0 15px rgba(183, 75, 75, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: scale(1.05);
+}
+
+.experience-item h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.experience-item p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #000000, #b74b4b);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+footer.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Social Icons in Footer */
+.social-icons-footer {
+    margin-top: 1rem; 
+}
+
+.social-icons-footer a {
+    color: white;
+    font-size: 2rem;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons-footer a:hover {
+    color: #b74b4b; 
+}
+
+/* Typing Effect Styling */
+.typing-text span {
+    border-right: 2px solid #b74b4b; 
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
